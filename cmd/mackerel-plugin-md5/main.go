@@ -36,7 +36,6 @@ func exitcode(err error) int {
 		}
 	}
 
-	fmt.Fprintf(os.Stdout, "%s: %s\n", md5ck.ExitCodeText(md5ck.OK), "All matched")
 	return md5ck.OK
 }
 
@@ -64,5 +63,6 @@ func run() error {
 		return err
 	}
 
+	fmt.Fprintf(os.Stdout, "%s: %s\n", md5ck.ExitCodeText(md5ck.OK), "All matched")
 	return nil
 }
