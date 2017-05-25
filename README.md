@@ -11,11 +11,28 @@ command = "/path/to/mackerel-plugin-md5 -c /path/to/md5ck.conf"
 ### Example of md5ck.conf
 
 ```
-[[Files]] # PHP 5.6.30
+[[Files]]
 PATH = "/usr/bin/php"
-SUM = "8139d07ec8dd8aa0aaf76b51b73c86c3"
+HASH = "8139d07ec8dd8aa0aaf76b51b73c86c3"
 
-[[Files]] # CentOS Linux release 7.3.1611
+[[Files]]
 PATH = "/etc/redhat-release"
-SUM = "af2cb935515b9d48999ecb2b1f4122e6"
+HASH = "af2cb935515b9d48999ecb2b1f4122e6"
+```
+
+### Save hash config
+
+```
+$ /path/to/mackerel-plugin-md5 -s -c /path/to/md5ck.conf
+```
+
+### Help
+
+```
+Usage: mackerel-plugin-md5 [options]
+  -c string
+        set cfgiguration file (default "md5ck.conf")
+  -h    this help
+  -s    save cfgiguration file md5 hash
+  -v    show this build version
 ```
