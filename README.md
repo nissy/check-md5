@@ -23,8 +23,32 @@ HASH = "af2cb935515b9d48999ecb2b1f4122e6"
 ### Save hash config
 
 ```
+$ cat /path/to/md5ck.conf
+
+[[Files]]
+PATH = "/usr/bin/python"
+
+[[Files]]
+PATH = "/etc/redhat-release"
+```
+
+```
 $ /path/to/mackerel-plugin-md5 -s -c /path/to/md5ck.conf
 ```
+
+```
+$ cat /path/to/md5ck.conf
+
+[[Files]]
+PATH = "/usr/bin/python"
+HASH = "faf96ffcd1955149edc54cd5e4195a0d"
+
+[[Files]]
+PATH = "/etc/redhat-release"
+HASH = "af2cb935515b9d48999ecb2b1f4122e6"
+```
+
+
 
 ### Help
 
