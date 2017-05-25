@@ -4,7 +4,7 @@ Check the MD5 checksum
 ### Example of mackerel-agent.conf
 
 ```
-[plugin.metrics.md5]
+[plugin.checks.md5]
 command = "/path/to/mackerel-plugin-md5 -c /path/to/md5ck.conf"
 ```
 
