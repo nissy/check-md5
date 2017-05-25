@@ -58,10 +58,7 @@ func (ck *MD5ck) Equals() error {
 }
 
 func (ck *MD5ck) Set() error {
-	var i int
-
 	for _, v := range ck.Files {
-		i++
 		if err := v.set(); err != nil {
 			return err
 		}
