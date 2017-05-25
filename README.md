@@ -12,8 +12,8 @@ command = "/path/to/mackerel-plugin-md5 -c /path/to/md5ck.conf"
 
 ```
 [[Files]]
-PATH = "/usr/bin/php"
-HASH = "8139d07ec8dd8aa0aaf76b51b73c86c3"
+PATH = "/usr/bin/python"
+HASH = "faf96ffcd1955149edc54cd5e4195a0d"
 
 [[Files]]
 PATH = "/etc/redhat-release"
