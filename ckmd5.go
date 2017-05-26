@@ -15,7 +15,7 @@ var exitCodeText = map[int]string{
 }
 
 type (
-	MD5ck struct {
+	CkMD5 struct {
 		Files []*File
 	}
 
@@ -25,8 +25,8 @@ type (
 	}
 )
 
-func New() *MD5ck {
-	return &MD5ck{}
+func New() *CkMD5 {
+	return &CkMD5{}
 }
 
 func (e PluginError) Error() string {
@@ -37,7 +37,7 @@ func ExitCodeText(code int) string {
 	return exitCodeText[code]
 }
 
-func (ck *MD5ck) Equals() error {
+func (ck *CkMD5) Equals() error {
 	var i int
 
 	for _, v := range ck.Files {
@@ -57,7 +57,7 @@ func (ck *MD5ck) Equals() error {
 	return nil
 }
 
-func (ck *MD5ck) Set() error {
+func (ck *CkMD5) Set() error {
 	for _, v := range ck.Files {
 		if err := v.set(); err != nil {
 			return err

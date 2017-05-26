@@ -5,7 +5,7 @@ Check the MD5 checksum
 
 ```
 [plugin.checks.md5]
-command = "/path/to/check-md5 -c /path/to/check-md5.conf"
+command = "check-md5 -c check-md5.conf"
 ```
 
 ### Example of check-md5.conf
@@ -23,13 +23,13 @@ HASH = "af2cb935515b9d48999ecb2b1f4122e6"
 ### Save hash config
 
 ```
-$ cat /path/to/check-md5.conf
+$ cat check-md5.conf
 [[Files]]
 PATH = "/usr/bin/python"
 
-$ /path/to/check-md5 -s -c /path/to/check-md5.conf
+$ check-md5 -s -c check-md5.conf
 
-$ cat /path/to/check-md5.conf
+$ cat check-md5.conf
 [[Files]]
 PATH = "/usr/bin/python"
 HASH = "faf96ffcd1955149edc54cd5e4195a0d"
