@@ -5,12 +5,12 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/nissy/mackerel-plugin-md5"
+	"github.com/nissy/check-md5"
 	"gopkg.in/BurntSushi/toml.v0"
 )
 
 const (
-	defaultCfgName = "md5ck.conf"
+	defaultCfgName = "check-md5.conf"
 	version        = "0.1"
 )
 
@@ -33,16 +33,16 @@ func exitcode(err error) int {
 		}
 
 		switch err := err.(type) {
-		case md5ck.PluginError:
-			fmt.Fprintf(os.Stderr, "%s: %s\n", md5ck.ExitCodeText(err.ExitCode), err.Message)
+		case ckmd5.PluginError:
+			fmt.Fprintf(os.Stderr, "%s: %s\n", ckmd5.ExitCodeText(err.ExitCode), err.Message)
 			return err.ExitCode
 		default:
-			fmt.Fprintf(os.Stderr, "%s: %s\n", md5ck.ExitCodeText(md5ck.CRITICAL), err.Error())
-			return md5ck.CRITICAL
+			fmt.Fprintf(os.Stderr, "%s: %s\n", ckmd5.ExitCodeText(ckmd5.CRITICAL), err.Error())
+			return ckmd5.CRITICAL
 		}
 	}
 
-	return md5ck.OK
+	return ckmd5.OK
 }
 
 func run() error {
@@ -59,7 +59,7 @@ func run() error {
 		return nil
 	}
 
-	ck := md5ck.New()
+	ck := ckmd5.New()
 
 	if _, err := toml.DecodeFile(*cfgName, &ck); err != nil {
 		return err
@@ -91,6 +91,6 @@ func run() error {
 		return err
 	}
 
-	fmt.Fprintf(os.Stdout, "%s: %s\n", md5ck.ExitCodeText(md5ck.OK), "All matched")
+	fmt.Fprintf(os.Stdout, "%s: %s\n", ckmd5.ExitCodeText(ckmd5.OK), "All matched")
 	return nil
 }

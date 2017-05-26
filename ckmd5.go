@@ -1,4 +1,4 @@
-package md5ck
+package ckmd5
 
 const (
 	OK       = 0
