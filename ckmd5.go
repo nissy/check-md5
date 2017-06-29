@@ -50,7 +50,7 @@ func (ck *CkMD5) Equals() error {
 	if i == 0 {
 		return PluginError{
 			Message:  "No check has been done",
-			ExitCode: WARNING,
+			ExitCode: UNKNOWN,
 		}
 	}
 
